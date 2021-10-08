@@ -1,10 +1,12 @@
 import "./styles.css";
 
+var bgColor = "skyblue";
+var uName = prompt("Enter username");
+
 export default function App() {
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+      <h1 style={{ backgroundColor: bgColor }}>Welcome {uName}</h1>
     </div>
   );
 }
