@@ -1,16 +1,20 @@
+import React, { useState } from "react";
 import "./styles.css";
 
-var bgColor = "skyblue";
-var likeCounter = 0;
+// var bgColor = "skyblue";
 // var uName = prompt("Enter username");
 
 export default function App() {
+  const [likeCounter, setLikeCounter] = useState(0);
+
   function likeClickHandler() {
-    console.log("liked");
-    likeCounter++;
-    console.log(likeCounter);
-    likeCounterDisplay.innerText = "Liked {likeCounter} times";
+    // var newLikeCounter = likeCounter + 1;
+    // setLikeCounter(newLikeCounter);
+    setLikeCounter(likeCounter + 1);
   }
+
+  // This is being put in console from view and not from the onClickHandler callback function
+  console.log("LikeCounter: ", likeCounter);
 
   return (
     <div className="App">
