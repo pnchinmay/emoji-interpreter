@@ -15,6 +15,9 @@ var emojiDictionary = {
 };
 
 export default function App() {
+
+  var [emoji, setEmoji] = useState("");
+
   function inputHandler(event) {}
   return (
     <div className="App">
