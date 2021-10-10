@@ -15,16 +15,27 @@ var emojiDictionary = {
 };
 
 export default function App() {
-
-  var [emoji, setEmoji] = useState("");
+  // var [emoji, setEmoji] = useState("");
   var [meaning, setMeaning] = useState("");
 
-  function inputHandler(event) {}
+  function inputHandler(event) {
+    var usrInput = event.target.value;
+
+    setMeaning(emojiDictionary[usrInput]);
+
+    if (emojiDictionary[usrInput] === undefined) {
+      setMeaning("Sorry, we don't have this emoji in our database. :(");
+    }
+    if (usrInput === "") {
+      setMeaning("");
+    }
+  }
+
   return (
     <div className="App">
       <h1>Welcome</h1>
       <input onChange={inputHandler}></input>
-      <div>Meaning: {} </div>
+      <div>Meaning: {meaning} </div>
     </div>
   );
 }
