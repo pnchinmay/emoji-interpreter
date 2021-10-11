@@ -22,6 +22,7 @@ var loggedIn = true;
 export default function App() {
   // var [emoji, setEmoji] = useState("");
   var [meaning, setMeaning] = useState("");
+  var [item, setItem] = useState("");
 
   function inputHandler(event) {
     var usrInput = event.target.value;
@@ -51,8 +52,7 @@ export default function App() {
   }
 
   function listItemHandler(item) {
-    console.log(item + " clicked");
-
+    setItem(item);
   }
 
 
@@ -76,6 +76,7 @@ export default function App() {
       </ol>
 
       <h3>Welcome {userMessage()}</h3>
+      <h4>hello, you clicked {item}</h4>
     </div>
   );
 }
