@@ -14,6 +14,8 @@ var emojiDictionary = {
   "😵": "Dizzy Face"
 };
 
+var shoppingList = ["milk", "eggs", "bread", "flowers"];
+
 export default function App() {
   // var [emoji, setEmoji] = useState("");
   var [meaning, setMeaning] = useState("");
@@ -36,6 +38,13 @@ export default function App() {
       <h1>Welcome</h1>
       <input onChange={inputHandler}></input>
       <div>Meaning: {meaning} </div>
+      <ol>
+        {
+          shoppingList.map(item => {
+            return <li> {item} </li>
+          })
+        }
+      </ol>
     </div>
   );
 }
