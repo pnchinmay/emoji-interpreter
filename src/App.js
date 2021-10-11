@@ -39,7 +39,7 @@ export default function App() {
 
   function userMessage() {
     if(username === "cm" && loggedIn === true) {
-      return <em> {user} </em>;
+      return <em> {username} </em>;
     }
     return "user";
 
@@ -52,8 +52,15 @@ export default function App() {
       <div>Meaning: {meaning} </div>
       <ol>
         {
-          shoppingList.map(function(item){
-              return <li> {item} </li>
+          shoppingList.map(function(item, index){
+            // Arrow function in map takes these three kinds of arguments
+// map((element) => { ... })
+// map((element, index) => { ... })
+// map((element, index, array) => { ... })
+            if(index % 2 === 0) {
+              return <li key={item} style={{backgroundColor: 'red'}}> {item} </li>
+            } return <li key={item} style={{backgroundColor: 'yellow'}}> {item} </li>
+            
           })
         }
       </ol>
