@@ -2,3 +2,16 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+li {
+  display: inline;
+  padding: 1rem;
+}
+
+li:nth-child(even) {
+  color: aquamarine;
+}
+
+li:nth-child(odd) {
+  color: yellowgreen;
+}
