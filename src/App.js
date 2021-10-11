@@ -42,14 +42,25 @@ export default function App() {
       return <em> {username} </em>;
     }
     return "user";
+  }
+
+  function indexStyle(index) {
+    if(index % 2 === 0) {
+      return {backgroundColor: 'red', fontSize: '2rem'}
+    } return {backgroundColor: 'yellow'}
+  }
+
+  function listItemHandler(item) {
+    console.log(item + " clicked");
 
   }
+
 
   return (
     <div className="App">
       <h1>Lists</h1>
       <input onChange={inputHandler}></input>
-      <div>Meaning: {meaning} </div>
+      <div id="meaningDiv">Meaning: {meaning} </div>
       <ol>
         {
           shoppingList.map(function(item, index){
@@ -57,14 +68,13 @@ export default function App() {
 // map((element) => { ... })
 // map((element, index) => { ... })
 // map((element, index, array) => { ... })
-            if(index % 2 === 0) {
-              return <li key={item} style={{backgroundColor: 'red', fontSize: '2rem'}}> {item} </li>
+              return <li key={item} onClick={() => listItemHandler(item)} style={indexStyle(index)}> {item} </li>
               // Removed error "Each child in a list should have a unique key property"
-            } return <li key={item} style={{backgroundColor: 'yellow'}}> {item} </li>
             
           })
         }
       </ol>
+
       <h3>Welcome {userMessage()}</h3>
     </div>
   );
