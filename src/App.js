@@ -58,7 +58,7 @@ export default function App() {
 // map((element, index) => { ... })
 // map((element, index, array) => { ... })
             if(index % 2 === 0) {
-              return <li key={item} style={{backgroundColor: 'red'}}> {item} </li>
+              return <li key={item} style={{backgroundColor: 'red', fontSize: '2rem'}}> {item} </li>
               // Removed error "Each child in a list should have a unique key property"
             } return <li key={item} style={{backgroundColor: 'yellow'}}> {item} </li>
             
