@@ -9,9 +9,9 @@ li {
 }
 
 li:nth-child(even) {
-  color: aquamarine;
+  background-color: turquoise;
 }
 
 li:nth-child(odd) {
-  color: yellowgreen;
+  background-color: yellowgreen;
 }
