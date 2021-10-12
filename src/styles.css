@@ -8,11 +8,7 @@ li {
   padding: 1rem;
 }
 
-/* li:nth-child(even) {
-  background-color: turquoise;
+input {
+  width: 80%;
+  padding: 1rem;
 }
-
-li:nth-child(odd) {
-  background-color: yellowgreen;
-  font-size: ;
-} */

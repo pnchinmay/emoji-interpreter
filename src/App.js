@@ -14,16 +14,7 @@ var emojiDictionary = {
   "😵": "Dizzy Face"
 };
 var emojisWeKnow = Object.keys(emojiDictionary);
-
-
-var shoppingList = ["milk", "eggs", "bread", "flowers"];
-
-var username = "cm";
-var loggedIn = true;
-
-
 export default function App() {
-  // var [emoji, setEmoji] = useState("");
   var [meaning, setMeaning] = useState("");
   var [item, setItem] = useState("");
 
@@ -41,56 +32,21 @@ export default function App() {
   }
 
   function emojiClickHandler(emoji) {
-    // console.log(emoji);
     setMeaning(emojiDictionary[emoji]);
   }
 
-  function userMessage() {
-    if (username === "cm" && loggedIn === true) {
-      return <em > { username } </em>;
-    }
-    return "user";
-  }
-
-  function indexStyle(index) {
-    if(index % 2 === 0) { 
-      return { backgroundColor: 'red', fontSize: '2rem', cursor: 'pointer' };
-    } return { backgroundColor: 'yellow', cursor: 'pointer' };
-  }
-
-  function listItemHandler(item) {
-    setItem(item);
-  }
-
-
   return ( 
     <div className = "App">
-    <h1> Lists </h1> 
+    <h1>Emoji Interpreter ✨</h1>
+    <h3 style={{color: 'orange'}}>Enter an emoji below and get its meaning 👇</h3>
     <input onChange = { inputHandler }/>
-    <h3> Meaning: { meaning } </h3> 
-    <ol> {
-      shoppingList.map(function (item, index) {
-        // Arrow function in map takes these three kinds of arguments
-        // map((element) => { ... })
-        // map((element, index) => { ... })
-        // map((element, index, array) => { ... })
-        return <li 
-        key = { item }
-        onClick = { () => listItemHandler(item) }
-        style = { indexStyle(index) }> { item } </li>
-        // Removed error "Each child in a list should have a unique key property"
-
-      })
-    } </ol>
-
-    <h3> Welcome { userMessage() } </h3> 
-    <h4> hello, you clicked { item } </h4> 
-    <h3> Emojis we know </h3>
+    <h3>{ meaning } </h3> 
+    <h4> Emojis we know </h4>
     {
       // Method - 1
       // <span>{emojisWeKnow}</span>
 
-      // Method - 2
+      // Method - 2 - using <span>
       // emojisWeKnow.map(function (emoji) {
       //   return <span 
       //   key = {emoji}
@@ -100,7 +56,7 @@ export default function App() {
       //      { emoji } </span>
       // })
 
-      // Method - 3
+      // Method - 3 - using <ol> and <li> tags
       <ol>
       {
         emojisWeKnow.map(function (emoji) {
